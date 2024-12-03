@@ -1,3 +1,9 @@
+const fs = require('fs')
+
+const file = fs.readFileSync('inputs/day1.txt', 'utf8')
+
+console.log(pairwiseDistanceSum(file))
+
 function pairwiseDistanceSum(raw: string) {
   const list1: number[] = []
   const list2: number[] = []

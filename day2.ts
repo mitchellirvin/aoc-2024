@@ -1,3 +1,9 @@
+const fs = require('fs')
+
+const file = fs.readFileSync('inputs/day2.txt', 'utf8')
+
+console.log(numberOfSafeLevels(file))
+
 function numberOfSafeLevels(raw: string) {
     const levels = raw.split('\n')
     let numSafe = 0
