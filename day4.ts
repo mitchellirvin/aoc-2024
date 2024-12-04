@@ -29,30 +29,28 @@ function countNumOfXmases(raw: string) {
         // you can only find words along a single direction, no zig-zagging allowed
         // don't need to track visited because we're only exploring in one direction at a time
         charIndex++
-        if (direction === undefined) {
+        if (direction === "N" || direction === undefined) {
             findXmases(row + 1, col, charIndex, "N")
+        }
+        if (direction === "NE" || direction === undefined) {
             findXmases(row + 1, col + 1, charIndex, "NE")
+        }
+        if (direction === "E" || direction === undefined) {
             findXmases(row, col + 1, charIndex, "E")
+        }
+        if (direction === "SE" || direction === undefined) {
             findXmases(row - 1, col + 1, charIndex, "SE")
+        }
+        if (direction === "S" || direction === undefined) {
             findXmases(row - 1, col, charIndex, "S")
+        }
+        if (direction === "SW" || direction === undefined) {
             findXmases(row - 1, col - 1, charIndex, "SW")
+        }
+        if (direction === "W" || direction === undefined) {
             findXmases(row, col - 1, charIndex, "W")
-            findXmases(row + 1, col - 1, charIndex, "NW")
-        } else if (direction === "N") {
-            findXmases(row + 1, col, charIndex, "N")
-        } else if (direction === "NE") {
-            findXmases(row + 1, col + 1, charIndex, "NE")
-        } else if (direction === "E") {
-            findXmases(row, col + 1, charIndex, "E")
-        } else if (direction === "SE") {
-            findXmases(row - 1, col + 1, charIndex, "SE")
-        } else if (direction === "S") {
-            findXmases(row - 1, col, charIndex, "S")
-        } else if (direction === "SW") { 
-            findXmases(row - 1, col - 1, charIndex, "SW")
-        } else if (direction === "W") {
-            findXmases(row, col - 1, charIndex, "W")
-        } else if (direction === "NW") {
+        }
+        if (direction === "NW" || direction === undefined) {
             findXmases(row + 1, col - 1, charIndex, "NW")
         }
     }
