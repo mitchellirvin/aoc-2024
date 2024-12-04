@@ -27,6 +27,7 @@ function countNumOfXmases(raw: string) {
         }
 
         // you can only find words along a single direction, no zig-zagging allowed
+        // don't need to track visited because we're only exploring in one direction at a time
         if (direction === undefined) {
             findXmases(row + 1, col, charIndex + 1, "N")
             findXmases(row + 1, col + 1, charIndex + 1, "NE")
