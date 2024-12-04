@@ -65,9 +65,13 @@ function countNumOfCrossMases(raw: string) {
     for (let row = 1; row < matrix.length - 1; row++) {
         for (let col = 1; col < matrix[0].length - 1; col++) {
             if (matrix[row][col] == 'A') {
+                // Ms on bottom, Ss on top
                 if (matrix[row + 1][col - 1] == 'M' && matrix[row + 1][col + 1] == 'M' && matrix[row - 1][col + 1] == 'S' && matrix[row - 1][col - 1] == 'S') numTwoMases++
+                // Ms on right, Ss on left
                 if (matrix[row + 1][col - 1] == 'S' && matrix[row + 1][col + 1] == 'M' && matrix[row - 1][col + 1] == 'M' && matrix[row - 1][col - 1] == 'S') numTwoMases++
+                // Ms on top, Ss on bottom
                 if (matrix[row + 1][col - 1] == 'S' && matrix[row + 1][col + 1] == 'S' && matrix[row - 1][col + 1] == 'M' && matrix[row - 1][col - 1] == 'M') numTwoMases++
+                // Ms on left, Ss on right
                 if (matrix[row + 1][col - 1] == 'M' && matrix[row + 1][col + 1] == 'S' && matrix[row - 1][col + 1] == 'S' && matrix[row - 1][col - 1] == 'M') numTwoMases++
             }
         }
